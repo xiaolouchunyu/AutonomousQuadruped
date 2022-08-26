@@ -1,0 +1,15 @@
+global_costmap:
+  global_frame: world  
+  robot_base_frame: true_body 
+
+
+  update_frequency: 1.0 
+  publish_frequency: 1.0 
+  transform_tolerance: 0.5 
+
+  static_map: true 
+
+  # plugins:
+  #   - {name: static_layer, type: "costmap_2d::StaticLayer", output: "screen"}
+  #   - {name: obstacle_layer, type: "costmap_2d::ObstacleLayer", output: "screen"}
+  #   - {name: inflation_layer, type: "costmap_2d::InflationLayer", output: "screen"}

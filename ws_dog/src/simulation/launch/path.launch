@@ -1,0 +1,11 @@
+<launch>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find simulation)/map/mymap.yaml"/>
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+        <rosparam file="$(find simulation)/params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+        <rosparam file="$(find simulation)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find simulation)/params/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find simulation)/params/global_costmap_params.yaml" command="load" />
+        <rosparam file="$(find simulation)/params/base_local_planner_params.yaml" command="load" />
+    </node>
+
+</launch>

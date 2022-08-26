@@ -1,0 +1,24 @@
+footprint: [[-0.25, -0.25], [-0.25, 0.25], [0.25, 0.25], [0.25, -0.25]] 
+obstacle_range: 2.5 
+raytrace_range: 3.0 
+inflation_radius    : 0.15 
+
+allow_unknown: true
+
+observation_sources: point_cloud_sensor
+point_cloud_sensor: { 
+  #sensor_frame : RoboDog/base_0/Quad_Intro2ROS/Sensors/DepthCamera, 
+  sensor_frame : true_body, 
+  data_type    : PointCloud2, 
+  topic        : /point_cloud, 
+  marking      : true, 
+  clearing     : true
+}
+
+static_layer:
+  map_topic             : /projected_map
+  subscribe_to_updates  : true
+  track_unknown_space   : true
+
+
+

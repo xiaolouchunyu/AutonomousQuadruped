@@ -1,0 +1,11 @@
+<launch>
+    <include file="$(find simulation)/launch/simulation.launch"/>
+    <include file="$(find simulation)/launch/occupancy_map.launch"/>
+    <include file="$(find simulation)/launch/path.launch"/>
+
+    <!-- <node pkg="controller_pkg" type="traj_publisher" name="traj_publisher" /> -->
+
+    <node pkg="controller_pkg" type="controller_node_test" name="controller_node" />
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find simulation)/rviz/map.rviz" />
+</launch>
